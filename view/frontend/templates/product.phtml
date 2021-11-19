@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);
+
+$productProvider = $block->getData('hero_product_provider');
+$product = $productProvider->getProduct(1);
+?>
+
+<h2><?= __('Product Name: ') . $product->getName() ?></h2>
+<?= __('SKU: ') . $product->getSku() ?>
+<?= __('Price: ') . $product->getPrice() ?><br>
+<?= __('Final Price: ') . $product->getFinalPrice() ?><br>
+<?= __('URL: ') . $product->getProductUrl() ?><br>
+<?= __('Image Path: ') . $product->getData('small_image') ?><br>
