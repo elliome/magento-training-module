@@ -1,0 +1,34 @@
+<?php declare(strict_types=1);
+$categoryProvider = $block->getData('hero_category_provider');
+
+$categories = $categoryProvider->getCategories();
+$categoriesByName = $categoryProvider->getCategories(10,'name');
+$categoriesLimit = $categoryProvider->getCategories(3);
+?>
+
+<h3>Task 2</h3>
+<div style='display:flex;flex-direction:column'>
+    <?php foreach ($categories as $category): ?>
+        <a href="<?= $escaper->escapeUrl($category->getUrl())?>">
+            <?= $category->getName() ?>
+        </a>
+    <?php endforeach ?>
+</div>
+
+<h3>Order by name</h3>
+<div style='display:flex;flex-direction:column'>
+    <?php foreach ($categoriesByName as $category): ?>
+        <a href="<?= $escaper->escapeUrl($category->getUrl())?>">
+            <?= $category->getName() ?>
+        </a>
+    <?php endforeach ?>
+</div>
+
+<h3>Limit3</h3>
+<div style='display:flex;flex-direction:column'>
+    <?php foreach ($categoriesLimit as $category): ?>
+        <a href="<?= $escaper->escapeUrl($category->getUrl())?>">
+            <?= $category->getName() ?>
+        </a>
+    <?php endforeach ?>
+</div>
