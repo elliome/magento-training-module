@@ -10,7 +10,7 @@ $categoriesLimit = $categoryProvider->getCategories(3);
 <div style='display:flex;flex-direction:column'>
     <?php foreach ($categories as $category): ?>
         <a href="<?= $escaper->escapeUrl($category->getUrl())?>">
-            <?= $category->getName() ?>
+            <?= $escaper->escapeHtml($category->getName()) ?>
         </a>
     <?php endforeach ?>
 </div>
@@ -19,7 +19,7 @@ $categoriesLimit = $categoryProvider->getCategories(3);
 <div style='display:flex;flex-direction:column'>
     <?php foreach ($categoriesByName as $category): ?>
         <a href="<?= $escaper->escapeUrl($category->getUrl())?>">
-            <?= $category->getName() ?>
+            <?= $escaper->escapeHtml($category->getName()) ?>
         </a>
     <?php endforeach ?>
 </div>
@@ -28,7 +28,7 @@ $categoriesLimit = $categoryProvider->getCategories(3);
 <div style='display:flex;flex-direction:column'>
     <?php foreach ($categoriesLimit as $category): ?>
         <a href="<?= $escaper->escapeUrl($category->getUrl())?>">
-            <?= $category->getName() ?>
+            <?= $escaper->escapeHtml($category->getName()) ?>
         </a>
     <?php endforeach ?>
 </div>
