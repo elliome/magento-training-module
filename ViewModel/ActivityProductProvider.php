@@ -32,6 +32,7 @@ class ActivityProductProvider implements ArgumentInterface
         $this->http = $http;
     }
 
+
     public function getProducts(): Collection
     {
         /** @var $productCollection Collection */
@@ -49,15 +50,21 @@ class ActivityProductProvider implements ArgumentInterface
             ->addAttributeToSelect('price')
             ->addAttributeToSelect('small_image')
             ->addAttributeToSelect('activity')
-            ->addAttributeToFilter(
-                'activity',
-                ['finset' => 5447]
-            )
+
             ->addAttributeToFilter(
                 'activity',
                 ['neq' => null]
             )
             ->setPageSize(12);
+
+        $query = $this->http->getParam('activity');
+        if($query !== null)
+        {
+            $productCollection->addAttributeToFilter(
+                'activity',
+                ['finset' => $query]
+            );
+        }
 
 
         return $productCollection;
