@@ -11,7 +11,7 @@
                     </argument>
                 </arguments>
             </block>
-            <block name="featured.categories"
+            <block name="landing.hero.categories"
                    template="Elliot_LandingPage::categories.phtml">
                 <arguments>
                     <argument name="hero_category_provider" xsi:type="object">
